@@ -1,43 +1,58 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const ACTIVE_COLOR = '#8A2BE2';
+const INACTIVE_COLOR = '#b0b0b0';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: ACTIVE_COLOR,
+        tabBarInactiveTintColor: INACTIVE_COLOR,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+        tabBarStyle: {
+          backgroundColor: '#ffffff',
+          borderTopWidth: 0,
+          elevation: 5,
+          shadowOpacity: 0.1,
+          shadowOffset: { width: 0, height: -2 },
+          height: 100,
+          paddingBottom: 5,
+        },
+        tabBarLabelStyle: {
+          fontFamily: 'Poppins-SemiBold',
+          fontSize: 10,
+        },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Feather name="home" size={26} color={color} />,
+        }}
+      />
+      {/* --- NEW SCREEN ADDED HERE --- */}
+      <Tabs.Screen
+        name="workout" // This matches workout.tsx
+        options={{
+          title: 'Workout',
+          tabBarIcon: ({ color }) => <Feather name="heart" size={26} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="projects"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Projects',
+          tabBarIcon: ({ color }) => <Feather name="briefcase" size={26} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ai"
+        options={{
+          title: 'Assistant',
+          tabBarIcon: ({ color }) => <Feather name="cpu" size={26} color={color} />,
         }}
       />
     </Tabs>
