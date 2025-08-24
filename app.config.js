@@ -22,17 +22,23 @@ export default {
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
+        foregroundImage: "./assets/icon.png",
         backgroundColor: "#ffffff"
-      }
+      },
+      package: "com.bextainer.solosystem"
     },
     web: {
       favicon: "./assets/favicon.png"
     },
-
-    // 👇 expose Gemini API key 
+    plugins: [ 
+      "expo-router"
+    ],
     extra: {
-      geminiApiKey: process.env.GEMINI_API_KEY,
+      geminiApiKey: process.env.GEMINI_API_KEY,     
+       
+      eas: {
+        projectId: "f3b8d0f9-551f-4ead-9596-d3e47fb11abf"
+      }
     }
   }
 };

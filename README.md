@@ -74,10 +74,6 @@ This application was built with a modern, efficient, and scalable mobile stack.
 To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
-    ```
 
 2.  **Install dependencies:**
     ```bash
