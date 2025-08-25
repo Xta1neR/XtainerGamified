@@ -16,8 +16,21 @@
         "GEMINI_API_KEY": "@GEMINI_API_KEY"
       }
     },
-    "production": {}
+    "production": {"env": {
+        "GEMINI_API_KEY": "@GEMINI_API_KEY"
+      }
   },
+
+  "apk-build": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "GEMINI_API_KEY": "@GEMINI_API_KEY"
+      }
+    }
+  },
+
   "submit": {
     "production": {}
   }
