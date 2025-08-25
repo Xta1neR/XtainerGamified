@@ -9,7 +9,7 @@ import Markdown from 'react-native-markdown-display';
 import * as Clipboard from 'expo-clipboard';
 
 const SuggestionCard = ({ title, content }: { title: string, content: string }) => (
-    <View intensity={100} tint="light" style={styles.suggestionCard}>
+    <View style={[styles.suggestionCard, { backgroundColor: 'rgba(255,255,255,0.5)' }]}>
       <Text style={styles.suggestionTitle}>{title}</Text>
       <Text style={styles.suggestionContent}>{content}</Text>
     </View>

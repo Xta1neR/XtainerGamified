@@ -9,7 +9,7 @@ import { MotiView } from 'moti';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
 const GlassCard = ({ children, style }: { children: React.ReactNode, style?: object }) => (
-  <View intensity={80} tint="light" style={[styles.card, style]}><>{children}</></View>
+  <View style={[styles.card, style, { backgroundColor: 'rgba(255,255,255,0.5)' }]}><>{children}</></View>
 );
 
 const HabitItem = ({ habit, onToggle, onDelete }: { habit: any, onToggle: (id: string) => void, onDelete: (id: string) => void }) => {
@@ -124,7 +124,7 @@ export default function HomeScreen() {
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.modalCenteringContainer}>
               <Pressable style={styles.modalOverlay} onPress={() => setHabitModalVisible(false)} />
               <View style={styles.modalContentContainer}>
-                <View intensity={90} tint="light" style={styles.modalBlurView}>
+                <View style={styles.modalBlurView}>
                   <Text style={styles.modalTitle}>Add New Quest</Text>
                   <TextInput style={styles.textInput} placeholder="e.g., Read for 15 minutes" value={newHabitText} onChangeText={setNewHabitText}/>
                   <View style={styles.buttonContainer}>

@@ -8,7 +8,7 @@ import { fullSchedule } from '../../constants/fullSchedule';
 import { getCalorieEstimate } from '../../services/GeminiService';
 
 const GlassCard = ({ children, style }: { children: React.ReactNode, style?: object }) => (
-  <View intensity={80} tint="light" style={[styles.card, style]}>{children}</View>
+  <View style={[styles.card, style]}>{children}</View>
 );
 
 export default function WorkoutScreen() {

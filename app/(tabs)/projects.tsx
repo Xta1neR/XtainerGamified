@@ -41,7 +41,7 @@ const CustomDropdown = ({ selectedValue, onSelect }: { selectedValue: string, on
 const ProjectCard = ({ item, isExpanded, onExpand, onStatusChange }: { item: Project, isExpanded: boolean, onExpand: () => void, onStatusChange: (status: string) => void }) => {
   return (
     <TouchableOpacity onPress={onExpand} activeOpacity={0.8}>
-      <intensity={90} tint="light" style={styles.card}>
+      <View style={[styles.card, { backgroundColor: 'rgba(255,255,255,0.5)' }]}>
         <View style={styles.cardHeader}><Text style={styles.cardIcon}>{item.icon}</Text><Text style={styles.cardTitle}>{item.title}</Text></View>
         <Text style={styles.cardDescription}>{item.description}</Text>
         <View style={styles.tagsContainer}>
@@ -57,7 +57,7 @@ const ProjectCard = ({ item, isExpanded, onExpand, onStatusChange }: { item: Pro
             <CustomDropdown selectedValue={item.status} onSelect={onStatusChange} />
           </View>
         )}
-      </BlurView>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -123,7 +123,7 @@ export default function ProjectsScreen() {
           <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1, justifyContent: 'center' }}>
             <Pressable style={styles.modalOverlay} onPress={() => setModalVisible(false)} />
             <View style={styles.addModalContainer}>
-              <View intensity={90} tint="light" style={styles.addModalContent}>
+              <View style={styles.addModalContent}>
                 <ScrollView>
                   <Text style={styles.modalTitle}>New Project</Text>
                   <TextInput style={styles.textInput} placeholder="Project Title" value={newTitle} onChangeText={setNewTitle} />
