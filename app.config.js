@@ -31,11 +31,13 @@ export default {
       favicon: "./assets/favicon.png"
     },
     plugins: [ 
-      "expo-router"
+      "expo-router",
+      "react-native-svg",
+      "react-native-reanimated",
+      "react-native-gesture-handler"
     ],
     extra: {
       geminiApiKey: process.env.GEMINI_API_KEY,     
-       
       eas: {
         projectId: "f3b8d0f9-551f-4ead-9596-d3e47fb11abf"
       }
