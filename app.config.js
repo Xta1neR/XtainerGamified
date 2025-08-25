@@ -2,7 +2,7 @@ import 'dotenv/config';
 
 export default {
   expo: {
-    name: "Be Xtainer",
+    name: "Be Xta1neR",
     slug: "be-xtainer",
     version: "1.0.0",
     orientation: "portrait",
@@ -13,6 +13,9 @@ export default {
       resizeMode: "contain",
       backgroundColor: "#ffffff"
     },
+    updates: {
+      fallbackToCacheTimeout: 0
+    },
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true
@@ -22,40 +25,16 @@ export default {
         foregroundImage: "./assets/icon.png",
         backgroundColor: "#ffffff"
       },
-      package: "com.xtainer.bextainer",
-      permissions: [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "INTERNET"
-      ]
+      package: "com.xtainer.bextainer"
     },
     web: {
       favicon: "./assets/favicon.png"
     },
-    plugins: [
-      "expo-router",
-      "expo-blur",
-      "expo-linear-gradient",
-      "expo-haptics",
-      "expo-clipboard",
-      "expo-image",
-      "expo-web-browser",
-      "expo-constants",
-      "@react-native-async-storage/async-storage",
-      "@react-native-community/slider",
-      "react-native-gesture-handler",
-      "react-native-reanimated",
-      "react-native-safe-area-context",
-      "react-native-screens",
-      "react-native-webview",
-      "react-native-svg",
-      "@react-native-picker/picker",
-      "react-native-circular-progress",
-      "react-native-circular-progress-indicator"
+    plugins: [ 
+      "expo-router"
     ],
     extra: {
-      geminiApiKey: process.env.GEMINI_API_KEY,
+      geminiApiKey: process.env.GEMINI_API_KEY,     
       eas: {
         projectId: "f3b8d0f9-551f-4ead-9596-d3e47fb11abf"
       }

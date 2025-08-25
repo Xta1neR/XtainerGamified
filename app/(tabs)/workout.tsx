@@ -1,5 +1,4 @@
 import { Feather } from '@expo/vector-icons';
-import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
@@ -9,7 +8,7 @@ import { fullSchedule } from '../../constants/fullSchedule';
 import { getCalorieEstimate } from '../../services/GeminiService';
 
 const GlassCard = ({ children, style }: { children: React.ReactNode, style?: object }) => (
-  <BlurView intensity={80} tint="light" style={[styles.card, style]}>{children}</BlurView>
+  <View intensity={80} tint="light" style={[styles.card, style]}>{children}</View>
 );
 
 export default function WorkoutScreen() {

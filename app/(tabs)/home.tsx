@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Modal, TextInput, KeyboardAvoidingView, Platform, Pressable, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
 import * as Progress from 'react-native-progress';
 import { Feather } from '@expo/vector-icons';
 import { useAppStore } from '../../store/appStore';
@@ -10,7 +9,7 @@ import { MotiView } from 'moti';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
 const GlassCard = ({ children, style }: { children: React.ReactNode, style?: object }) => (
-  <BlurView intensity={80} tint="light" style={[styles.card, style]}><>{children}</></BlurView>
+  <View intensity={80} tint="light" style={[styles.card, style]}><>{children}</></View>
 );
 
 const HabitItem = ({ habit, onToggle, onDelete }: { habit: any, onToggle: (id: string) => void, onDelete: (id: string) => void }) => {
@@ -125,14 +124,14 @@ export default function HomeScreen() {
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.modalCenteringContainer}>
               <Pressable style={styles.modalOverlay} onPress={() => setHabitModalVisible(false)} />
               <View style={styles.modalContentContainer}>
-                <BlurView intensity={90} tint="light" style={styles.modalBlurView}>
+                <View intensity={90} tint="light" style={styles.modalBlurView}>
                   <Text style={styles.modalTitle}>Add New Quest</Text>
                   <TextInput style={styles.textInput} placeholder="e.g., Read for 15 minutes" value={newHabitText} onChangeText={setNewHabitText}/>
                   <View style={styles.buttonContainer}>
                     <TouchableOpacity style={[styles.button, styles.cancelButton]} onPress={() => setHabitModalVisible(false)}><Text style={[styles.buttonText, { color: '#555' }]}>Cancel</Text></TouchableOpacity>
                     <TouchableOpacity style={[styles.button, styles.addButton]} onPress={handleAddNewHabit}><Text style={styles.buttonText}>Add</Text></TouchableOpacity>
                   </View>
-                </BlurView>
+                </View>
               </View>
             </KeyboardAvoidingView>
           </Modal>

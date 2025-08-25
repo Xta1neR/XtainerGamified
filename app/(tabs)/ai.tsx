@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, ActivityIndicator, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
 import { Feather } from '@expo/vector-icons';
 import { useAppStore } from '../../store/appStore';
 import { MotiView } from 'moti';
@@ -10,10 +9,10 @@ import Markdown from 'react-native-markdown-display';
 import * as Clipboard from 'expo-clipboard';
 
 const SuggestionCard = ({ title, content }: { title: string, content: string }) => (
-    <BlurView intensity={100} tint="light" style={styles.suggestionCard}>
+    <View intensity={100} tint="light" style={styles.suggestionCard}>
       <Text style={styles.suggestionTitle}>{title}</Text>
       <Text style={styles.suggestionContent}>{content}</Text>
-    </BlurView>
+    </View>
 );
 
 export default function AIScreen() {
