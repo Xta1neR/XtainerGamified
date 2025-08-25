@@ -17,8 +17,8 @@ export default function TabLayout() {
           elevation: 5,
           shadowOpacity: 0.1,
           shadowOffset: { width: 0, height: -2 },
-          height: 100,
-          paddingBottom: 5,
+          height: 60,
+          paddingBottom: 10,
         },
         tabBarLabelStyle: {
           fontFamily: 'Poppins-SemiBold',
@@ -53,6 +53,13 @@ export default function TabLayout() {
         options={{
           title: 'Assistant',
           tabBarIcon: ({ color }) => <Feather name="cpu" size={26} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="pomodoro"
+        options={{
+          title: "Pomodoro",
+          tabBarIcon: ({ color, size }) => <Feather name="clock" size={size} color={color} />,
         }}
       />
     </Tabs>

@@ -145,7 +145,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  scrollContainer: { padding: 16, paddingTop: 40, paddingBottom: 120 },
+  scrollContainer: { padding: 16, paddingTop: 40, paddingBottom: 50 },
   header: { marginBottom: 24, paddingHorizontal: 8 },
   headerTitle: { fontFamily: 'Poppins-Regular', fontSize: 24, color: '#666' },
   headerUsername: { fontFamily: 'Poppins-Bold', fontSize: 32, color: '#333' },
